@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Github, Linkedin, Code2, Terminal, Cpu } from 'lucide-react';
+import { ArrowUpRight, Github, Linkedin, Mail, Code2, Terminal, Cpu } from 'lucide-react';
 import { TEAM_MEMBERS, BRAND_CONFIG } from '../data/portfolioData';
 
 export const Team: React.FC = () => {
@@ -59,6 +59,23 @@ export const Team: React.FC = () => {
                   {member.shortBio}
                 </p>
 
+                {/* Member Direct Email */}
+                {member.email && (
+                  <div className="mb-6 pt-3 border-t border-white/[0.06]">
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-1">
+                      DIRECT EMAIL
+                    </div>
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-300 hover:text-accent-cyan transition-colors group/mail max-w-full"
+                      title={`Email ${member.name}`}
+                    >
+                      <Mail className="w-3.5 h-3.5 text-neutral-500 group-hover/mail:text-accent-cyan transition-colors shrink-0" />
+                      <span className="truncate">{member.email}</span>
+                    </a>
+                  </div>
+                )}
+
                 {/* Key Skills Badges */}
                 <div className="space-y-2 mb-8">
                   <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-500">
@@ -81,6 +98,15 @@ export const Team: React.FC = () => {
               <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
                 <span className="text-[10px] font-mono text-neutral-500">TECH GENZ LAB</span>
                 <div className="flex items-center gap-3">
+                  {member.email && (
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="flex items-center gap-1 text-xs font-mono text-neutral-400 hover:text-accent-cyan transition-colors"
+                      title={`Send email to ${member.name} (${member.email})`}
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                    </a>
+                  )}
                   {member.linkedin && (
                     <a
                       href={member.linkedin}

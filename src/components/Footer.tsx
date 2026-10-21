@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Github } from 'lucide-react';
+import { ArrowUp, Github, Mail } from 'lucide-react';
 import { BRAND_CONFIG } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
@@ -60,6 +60,15 @@ export const Footer: React.FC = () => {
               ECOSYSTEM
             </div>
             <ul className="space-y-2 text-xs font-mono">
+              <li>
+                <a
+                  href={`mailto:${BRAND_CONFIG.contactEmail}`}
+                  className="hover:text-accent-cyan transition-colors inline-flex items-center gap-1.5"
+                >
+                  <Mail className="w-3.5 h-3.5" />
+                  <span>{BRAND_CONFIG.contactEmail}</span>
+                </a>
+              </li>
               <li>
                 <a
                   href={BRAND_CONFIG.githubOrg}

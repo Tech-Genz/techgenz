@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mail, Github, Send, CheckCircle2, AlertCircle, Copy, ArrowUpRight } from 'lucide-react';
-import { BRAND_CONFIG } from '../data/portfolioData';
+import { Mail, Github, Send, CheckCircle2, Copy } from 'lucide-react';
+import { BRAND_CONFIG, TEAM_MEMBERS } from '../data/portfolioData';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +15,7 @@ export const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   // Subtle dark fluid/smoky abstract canvas texture
   useEffect(() => {
@@ -84,32 +85,49 @@ export const Contact: React.FC = () => {
     if (!formData.subject.trim()) errs.subject = 'Subject is required';
     if (!formData.message.trim()) {
       errs.message = 'Message cannot be empty';
-    } else if (formData.message.trim().length < 15) {
-      errs.message = 'Please provide at least 15 characters';
+    } else if (formData.message.trim().length < 10) {
+      errs.message = 'Please provide at least 10 characters';
     }
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
 
-    // Fallback direct mail generation & clean client feedback
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
+    try {
+      // Direct AJAX transmission to FormSubmit endpoint for admin@techgenz.site
+      const response = await fetch('https://formsubmit.co/ajax/admin@techgenz.site', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          _subject: `[Tech Genz Inquiry] ${formData.subject}`,
+          subject: formData.subject,
+          message: formData.message,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      });
 
-      // Open user's default email client as a reliable mailto link
-      const mailtoUrl = `mailto:${BRAND_CONFIG.contactEmail}?subject=${encodeURIComponent(
-        `[Tech Genz Inquiry] ${formData.subject}`
-      )}&body=${encodeURIComponent(
-        `From: ${formData.name} (${formData.email})\n\n${formData.message}`
-      )}`;
-      window.location.href = mailtoUrl;
-    }, 1000);
+      if (response.ok) {
+        setIsSubmitting(false);
+        setSubmitted(true);
+      } else {
+        // Fallback to native POST submission
+        formRef.current?.submit();
+      }
+    } catch {
+      // Fallback to native POST if fetch is intercepted or offline
+      formRef.current?.submit();
+    }
   };
 
   const copyEmailToClipboard = () => {
@@ -128,7 +146,7 @@ export const Contact: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8">
         {/* Section Top Header */}
         <div className="flex items-center gap-2 mb-12">
-          <span className="text-xs font-mono text-neutral-500 uppercase tracking-widest">06 //</span>
+          <span className="text-xs font-mono text-neutral-500 uppercase tracking-widest">05 //</span>
           <span className="text-xs font-mono text-neutral-400 uppercase tracking-widest">INITIATE CONTACT</span>
         </div>
 
@@ -151,19 +169,23 @@ export const Contact: React.FC = () => {
               </p>
             </div>
 
-            {/* Direct Contact Card (Matches Reference Recording Frame 9-11) */}
+            {/* Direct Contact Card */}
             <div className="p-7 rounded-2xl border border-white/[0.12] bg-[#0c0c0f]/80 backdrop-blur-md space-y-6 shadow-xl">
+              {/* Primary Admin Inbox */}
               <div className="border-b border-white/[0.08] pb-4">
                 <div className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest mb-1">
-                  OFFICIAL INBOX
+                  OFFICIAL INBOX // LEADER
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-mono text-white select-all">
+                  <a
+                    href={`mailto:${BRAND_CONFIG.contactEmail}`}
+                    className="text-sm font-mono text-white hover:text-accent-cyan transition-colors select-all"
+                  >
                     {BRAND_CONFIG.contactEmail}
-                  </span>
+                  </a>
                   <button
                     onClick={copyEmailToClipboard}
-                    className="p-1.5 rounded-lg border border-white/10 hover:border-white/30 text-neutral-400 hover:text-white transition-colors"
+                    className="p-1.5 rounded-lg border border-white/10 hover:border-white/30 text-neutral-400 hover:text-white transition-colors cursor-pointer"
                     title="Copy email to clipboard"
                   >
                     {copiedEmail ? (
@@ -175,6 +197,29 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
 
+              {/* Core Team Member Direct Emails */}
+              <div className="border-b border-white/[0.08] pb-4">
+                <div className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest mb-2.5">
+                  CORE TEAM DIRECTORY
+                </div>
+                <div className="space-y-2 text-xs font-mono">
+                  {TEAM_MEMBERS.map((member) => (
+                    <div key={member.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-0.5 sm:gap-2">
+                      <span className="text-neutral-400">{member.name}:</span>
+                      {member.email && (
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="text-accent-cyan hover:underline transition-colors"
+                        >
+                          {member.email}
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* GitHub Organization */}
               <div className="border-b border-white/[0.08] pb-4">
                 <div className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest mb-1">
                   CODE ORGANIZATION
@@ -201,14 +246,14 @@ export const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: High-Fidelity Validated Contact Form */}
+          {/* Right Column: High-Fidelity FormSubmit Contact Form */}
           <div className="lg:col-span-7">
             <div className="rounded-3xl border border-white/[0.12] bg-[#0c0c0f]/90 backdrop-blur-xl p-8 sm:p-10 shadow-2xl">
               <h3 className="text-xl sm:text-2xl font-display font-bold text-white mb-2">
                 Send a Dispatch
               </h3>
               <p className="text-xs text-neutral-400 mb-8 font-mono">
-                Fill in the details below. Our team reviews all incoming transmissions directly.
+                Messages are delivered directly to <span className="text-neutral-200">admin@techgenz.site</span> via FormSubmit.
               </p>
 
               {submitted ? (
@@ -220,18 +265,39 @@ export const Contact: React.FC = () => {
                     Transmission Dispatched
                   </h4>
                   <p className="text-xs text-neutral-300 max-w-sm mx-auto leading-relaxed">
-                    Your dispatch payload has been compiled. If your mail client did not open automatically, contact us directly at{' '}
-                    <span className="text-white font-mono">{BRAND_CONFIG.contactEmail}</span>.
+                    Your dispatch payload has been sent to{' '}
+                    <span className="text-white font-mono font-medium">admin@techgenz.site</span>. Our team will review your message and reply promptly.
                   </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-4 px-5 py-2 rounded-full border border-white/20 text-xs font-mono text-white hover:bg-white/10 transition-colors"
-                  >
-                    Send Another Message
-                  </button>
+                  <div className="pt-2">
+                    <button
+                      onClick={() => {
+                        setSubmitted(false);
+                        setFormData({ name: '', email: '', subject: '', message: '' });
+                      }}
+                      className="px-5 py-2 rounded-full border border-white/20 text-xs font-mono text-white hover:bg-white/10 transition-colors cursor-pointer"
+                    >
+                      Send Another Message
+                    </button>
+                  </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} noValidate className="space-y-6">
+                <form
+                  ref={formRef}
+                  action="https://formsubmit.co/admin@techgenz.site"
+                  method="POST"
+                  onSubmit={handleSubmit}
+                  noValidate
+                  className="space-y-6"
+                >
+                  {/* FormSubmit configurations */}
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value={formData.subject ? `[Tech Genz Inquiry] ${formData.subject}` : 'New Inquiry via techgenz.site'}
+                  />
+
                   {/* Name & Email Fields */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
@@ -240,6 +306,8 @@ export const Contact: React.FC = () => {
                       </label>
                       <input
                         type="text"
+                        name="name"
+                        required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Alex Morgan"
@@ -258,6 +326,8 @@ export const Contact: React.FC = () => {
                       </label>
                       <input
                         type="email"
+                        name="email"
+                        required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="alex@domain.com"
@@ -278,6 +348,8 @@ export const Contact: React.FC = () => {
                     </label>
                     <input
                       type="text"
+                      name="subject"
+                      required
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       placeholder="High-performance Web App / 3D Canvas Architecture"
@@ -301,6 +373,8 @@ export const Contact: React.FC = () => {
                       </span>
                     </div>
                     <textarea
+                      name="message"
+                      required
                       rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -321,7 +395,7 @@ export const Contact: React.FC = () => {
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-semibold text-xs tracking-widest uppercase hover:bg-neutral-200 disabled:opacity-50 transition-all duration-300 shadow-lg cursor-pointer"
                   >
                     {isSubmitting ? (
-                      <span>COMPILING DISPATCH...</span>
+                      <span>DISPATCHING...</span>
                     ) : (
                       <>
                         <span>TRANSMIT MESSAGE</span>

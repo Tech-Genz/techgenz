@@ -5,6 +5,7 @@ export interface TeamMember {
   index: string;
   shortBio: string;
   skills: string[];
+  email?: string;
   github?: string;
   linkedin?: string;
   avatarPlaceholder?: string;
@@ -54,7 +55,7 @@ export const BRAND_CONFIG = {
   intro: "Four minds. One vision. Technology built to turn ambitious ideas into useful experiences.",
   about: "Tech Genz is a collaborative technology team focused on designing, developing, and experimenting with digital products. We combine engineering, creative thinking, and practical problem-solving to turn ideas into working experiences.",
   githubOrg: "https://github.com/Tech-Genz",
-  contactEmail: "contact@techgenz.dev", // Configurable public email placeholder
+  contactEmail: "admin@techgenz.site",
   availability: "Available for ambitious collaborations & high-impact projects"
 };
 
@@ -142,6 +143,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     index: "01",
     name: "V. Gunasekhar",
     role: "Team Leader",
+    email: "admin@techgenz.site",
     shortBio: "Architecting core system structures, driving technical strategy, and coordinating engineering pipelines across web, backend, and 3D visual environments.",
     skills: ["Full Stack Architecture", "System Design", "React & TypeScript", "Three.js & Graphics", "Engineering Leadership"],
     github: "https://github.com/Tech-Genz",
@@ -153,6 +155,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     index: "02",
     name: "CH. Sahithi Sri",
     role: "Team Member 1",
+    email: "c.sahithisri@techgenz.site",
     shortBio: "Specializing in intuitive user interfaces, frontend component systems, responsive design aesthetics, and fluid user experiences.",
     skills: ["Frontend Development", "UI/UX Architecture", "React & Modern CSS", "Design Systems", "Web Accessibility"],
     github: "https://github.com/Tech-Genz",
@@ -164,6 +167,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     index: "03",
     name: "Kull Bhuvan",
     role: "Team Member 2",
+    email: "k.bhuvan@techgenz.site",
     shortBio: "Focused on robust backend services, data modeling, API integration, and cloud deployment pipelines for scalable digital applications.",
     skills: ["Backend Engineering", "Database Modeling", "API Architecture", "Cloud Infrastructure", "Performance Optimization"],
     github: "https://github.com/Tech-Genz",
@@ -175,6 +179,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     index: "04",
     name: "SK Mohammad Navaz",
     role: "Team Member 3",
+    email: "sk.navaz@techgenz.site",
     shortBio: "Developing full-stack workflows, experimental prototypes, logic integration, and intelligent automation tooling for client and server platforms.",
     skills: ["Full Stack Prototyping", "Automation & Logic", "Node.js & JavaScript", "Mobile Integration", "Testing & QA"],
     github: "https://github.com/Tech-Genz",
