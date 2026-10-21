@@ -123,7 +123,7 @@ export const PROJECTS: ProjectItem[] = [
     techStack: ["React", "TypeScript", "Node.js", "Express", "Cloud Storage", "REST APIs", "Tailwind CSS"],
     mockupType: "browser",
     repoUrl: "https://github.com/Tech-Genz/SharePinz",
-    liveUrl: "https://github.com/Tech-Genz/SharePinz",
+    liveUrl: "https://sharepinz.site/",
     problem: "Traditional file sharing requires either sign-ups with email verifications or yields unwieldy, easily forgotten links with ambiguous security policies.",
     solution: "SharePinz introduces ephemeral PIN codes paired with encrypted cloud storage, allowing immediate sender-to-recipient retrieval with TTL expiration and clean bandwidth limits.",
     keyFeatures: [
@@ -133,75 +133,6 @@ export const PROJECTS: ProjectItem[] = [
       "Minimalist, distraction-free responsive upload and download UI"
     ],
     challenges: "Handling concurrent chunked uploads reliably across spotty network connections while maintaining strict PIN access gating and automated storage cleanup."
-  },
-  {
-    id: "genaura-ai",
-    index: "02",
-    title: "GENAURA",
-    italicWord: "intelligence",
-    subtitle: "AI WORKFLOW & GENERATION ENGINE",
-    category: "AI & Automation",
-    description: "A centralized generative AI assistant and workflow automation layer built to chain multi-modal prompts, synthesize insights, and automate document transformations.",
-    featured: false,
-    year: "2026",
-    techStack: ["React", "TypeScript", "Python API", "Gemini API", "FastAPI", "Vector Embeddings"],
-    mockupType: "desktop",
-    repoUrl: "https://github.com/Tech-Genz",
-    problem: "Teams waste countless hours executing repetitive synthesis tasks across fragmented document formats without unified prompt context.",
-    solution: "A unified AI workbench that indexes source materials, applies domain-tuned prompting pipelines, and outputs structured, ready-to-publish assets.",
-    keyFeatures: [
-      "Multi-modal prompt chaining with structured schema validation",
-      "Context-aware document parsing and summarization",
-      "Low-latency streaming responses with markdown and code highlights",
-      "Privacy-conscious local session persistence"
-    ],
-    challenges: "Minimizing token overhead and ensuring reliable schema enforcement across unpredictable LLM responses."
-  },
-  {
-    id: "omnirush",
-    index: "03",
-    title: "OMNIRUSH",
-    italicWord: "realtime",
-    subtitle: "COLLABORATIVE SYNCHRONIZATION ENGINE",
-    category: "Backend & Systems",
-    description: "High-throughput realtime synchronization workspace designed for multi-user state synchronization, instant event telemetry, and distributed state coordination.",
-    featured: false,
-    year: "2026",
-    techStack: ["Node.js", "TypeScript", "WebSockets", "Redis", "React", "Tailwind CSS"],
-    mockupType: "browser",
-    repoUrl: "https://github.com/Tech-Genz",
-    problem: "Real-time collaborative applications frequently experience race conditions, divergent local states, and degraded responsiveness under network latency.",
-    solution: "Engineered an event-driven synchronization bridge leveraging lightweight binary WebSockets and optimistic client-side rollback mechanisms.",
-    keyFeatures: [
-      "Sub-50ms round-trip state broadcasts",
-      "Conflict-free replicated data structures (CRDT)",
-      "Automated fallback to long-polling upon connection interruptions",
-      "Zero-dependency lightweight client SDK"
-    ],
-    challenges: "Balancing serialization performance with low packet payloads across unpredictable mobile and desktop networks."
-  },
-  {
-    id: "pulse-grid",
-    index: "04",
-    title: "PULSE",
-    italicWord: "interactive",
-    subtitle: "GPU PARTICLE TOPOLOGY & AUDIO MATRIX",
-    category: "Creative Coding & 3D",
-    description: "An experimental WebGL audio-reactive particle visualizer exploring mathematical wave simulations, dynamic field perturbations, and spatial sound interaction.",
-    featured: false,
-    year: "2026",
-    techStack: ["Three.js", "WebGL", "GLSL Shaders", "Web Audio API", "TypeScript"],
-    mockupType: "code",
-    repoUrl: "https://github.com/Tech-Genz",
-    problem: "Standard web visualizers rely heavily on CPU loops that stutter under heavy particle counts and struggle to maintain 60 FPS.",
-    solution: "Offloaded particle transforms entirely to custom GPU vertex shaders driven by Web Audio FFT frequency arrays.",
-    keyFeatures: [
-      "Over 100,000 real-time particles rendered at a solid 60 FPS",
-      "Frequency spectrum analysis mapped to particle velocity and dispersion",
-      "Dynamic camera orbital controls with inertial dampening",
-      "Configurable chromatic aberration and cinematic vignette post-processing"
-    ],
-    challenges: "Optimizing WebGL shader uniforms across a wide range of mobile GPU hardware without thermal throttling."
   }
 ];
 
@@ -214,6 +145,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     shortBio: "Architecting core system structures, driving technical strategy, and coordinating engineering pipelines across web, backend, and 3D visual environments.",
     skills: ["Full Stack Architecture", "System Design", "React & TypeScript", "Three.js & Graphics", "Engineering Leadership"],
     github: "https://github.com/Tech-Genz",
+    linkedin: "https://www.linkedin.com/in/varikunta-gunasekhar-446997369/",
     avatarPlaceholder: "VG"
   },
   {
@@ -224,6 +156,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     shortBio: "Specializing in intuitive user interfaces, frontend component systems, responsive design aesthetics, and fluid user experiences.",
     skills: ["Frontend Development", "UI/UX Architecture", "React & Modern CSS", "Design Systems", "Web Accessibility"],
     github: "https://github.com/Tech-Genz",
+    linkedin: "https://www.linkedin.com/in/sahithi-sri-2b0355386",
     avatarPlaceholder: "SS"
   },
   {
@@ -234,6 +167,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     shortBio: "Focused on robust backend services, data modeling, API integration, and cloud deployment pipelines for scalable digital applications.",
     skills: ["Backend Engineering", "Database Modeling", "API Architecture", "Cloud Infrastructure", "Performance Optimization"],
     github: "https://github.com/Tech-Genz",
+    linkedin: "https://www.linkedin.com/in/kull-bhuvan-772058440",
     avatarPlaceholder: "KB"
   },
   {
@@ -244,6 +178,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     shortBio: "Developing full-stack workflows, experimental prototypes, logic integration, and intelligent automation tooling for client and server platforms.",
     skills: ["Full Stack Prototyping", "Automation & Logic", "Node.js & JavaScript", "Mobile Integration", "Testing & QA"],
     github: "https://github.com/Tech-Genz",
+    linkedin: "https://www.linkedin.com/in/navaz-sk-523aa735a",
     avatarPlaceholder: "MN"
   }
 ];

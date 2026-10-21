@@ -70,7 +70,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             <div className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
             <div className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
             <div className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
-            <span className="ml-3 text-[10px] font-mono text-neutral-500">app.techgenz.dev/{project.id}</span>
+            <span className="ml-3 text-[10px] font-mono text-neutral-400">https://sharepinz.site</span>
           </div>
 
           <div className="mt-8 text-center max-w-md space-y-4">
@@ -176,23 +176,25 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             )}
           </div>
 
-          {/* Navigation between projects */}
-          <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-            <button
-              onClick={() => onSelectProject(prevProject)}
-              className="flex items-center gap-1 px-3 py-2 rounded-lg border border-white/10 hover:border-white/30 text-xs font-mono text-neutral-400 hover:text-white transition-colors"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              <span>PREV</span>
-            </button>
-            <button
-              onClick={() => onSelectProject(nextProject)}
-              className="flex items-center gap-1 px-3 py-2 rounded-lg border border-white/10 hover:border-white/30 text-xs font-mono text-neutral-400 hover:text-white transition-colors"
-            >
-              <span>NEXT</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
+          {/* Navigation between projects (if multiple exist) */}
+          {allProjects.length > 1 && (
+            <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
+              <button
+                onClick={() => onSelectProject(prevProject)}
+                className="flex items-center gap-1 px-3 py-2 rounded-lg border border-white/10 hover:border-white/30 text-xs font-mono text-neutral-400 hover:text-white transition-colors"
+              >
+                <ChevronLeft className="w-4 h-4" />
+                <span>PREV</span>
+              </button>
+              <button
+                onClick={() => onSelectProject(nextProject)}
+                className="flex items-center gap-1 px-3 py-2 rounded-lg border border-white/10 hover:border-white/30 text-xs font-mono text-neutral-400 hover:text-white transition-colors"
+              >
+                <span>NEXT</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

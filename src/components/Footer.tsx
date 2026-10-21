@@ -73,6 +73,16 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
+                  href="https://sharepinz.site/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent-cyan transition-colors"
+                >
+                  SharePinz Live Platform ↗
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://github.com/Tech-Genz/SharePinz"
                   target="_blank"
                   rel="noopener noreferrer"

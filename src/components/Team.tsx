@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Github, Code2, Terminal, Cpu } from 'lucide-react';
+import { ArrowUpRight, Github, Linkedin, Code2, Terminal, Cpu } from 'lucide-react';
 import { TEAM_MEMBERS, BRAND_CONFIG } from '../data/portfolioData';
 
 export const Team: React.FC = () => {
@@ -80,17 +80,31 @@ export const Team: React.FC = () => {
               {/* Bottom Action / Profile Link */}
               <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
                 <span className="text-[10px] font-mono text-neutral-500">TECH GENZ LAB</span>
-                {member.github && (
-                  <a
-                    href={member.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-mono text-neutral-400 hover:text-white transition-colors"
-                  >
-                    <Github className="w-3.5 h-3.5" />
-                    <span>GITHUB ↗</span>
-                  </a>
-                )}
+                <div className="flex items-center gap-3">
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs font-mono text-neutral-400 hover:text-accent-cyan transition-colors"
+                      title={`${member.name} on LinkedIn`}
+                    >
+                      <Linkedin className="w-3.5 h-3.5" />
+                      <span>LINKEDIN ↗</span>
+                    </a>
+                  )}
+                  {member.github && (
+                    <a
+                      href={member.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs font-mono text-neutral-400 hover:text-white transition-colors"
+                      title={`${member.name} on GitHub`}
+                    >
+                      <Github className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
