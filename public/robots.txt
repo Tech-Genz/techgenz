@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techgenz.site/sitemap.xml
