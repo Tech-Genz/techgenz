@@ -1,0 +1,35 @@
+# Tech Genz
+
+> Ideas Engineered Beyond Limits.
+
+Tech Genz is a four-member software and technology team formed around innovation, creativity, teamwork, and practical problem-solving. The team is associated with the student community of N.B.K.R. Institute of Science & Technology (NBKRIST), located in Vidyanagar, Andhra Pradesh, India. Tech Genz operates independently as a student developer team aiming to turn ambitious ideas into useful digital experiences, explore emerging technologies, and build software projects.
+
+## Motive
+To use technology to solve real-world problems, encourage innovation, develop technical skills, and transform ideas into meaningful digital experiences.
+
+## Vision
+To build a smarter digital future through collaboration, continuous learning, and creative software development.
+
+## Motto
+"Ideas Engineered Beyond Limits."
+
+## Academic Connection
+- Associated with the student community of N.B.K.R. Institute of Science & Technology (NBKRIST).
+- Location: Vidyanagar, Andhra Pradesh, India.
+- Official College Website: https://nbkrist.org/
+- Note: Tech Genz is formed by members of the student community; it operates independently as a collaborative student developer team.
+
+## Core Team Members
+- V. Gunasekhar — Team Leader
+- CH. Sahithi Sri — Team Member
+- Kull Bhuvan — Team Member
+- SK Mohammad Navaz — Team Member
+
+## Key Projects
+- SharePinz: A PIN-based ephemeral file-sharing platform (https://sharepinz.site/)
+
+## Official Links
+- Website: https://techgenz.site/
+- GitHub Organization: https://github.com/Tech-Genz
+- GitHub Repository: https://github.com/Tech-Genz/techgenz
+- Contact: admin@techgenz.site

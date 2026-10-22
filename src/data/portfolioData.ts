@@ -53,8 +53,22 @@ export const BRAND_CONFIG = {
   descriptor: "Technology Studio // Creative Engineering",
   subDescriptor: "Web, AI, Cloud & Interactive 3D",
   intro: "Four minds. One vision. Technology built to turn ambitious ideas into useful experiences.",
-  about: "Tech Genz is a collaborative technology team focused on designing, developing, and experimenting with digital products. We combine engineering, creative thinking, and practical problem-solving to turn ideas into working experiences.",
+  about: "Tech Genz is a software and technology team formed around innovation, creativity, teamwork, and problem-solving. Associated with the student community of N.B.K.R. Institute of Science & Technology (NBKRIST), Vidyanagar, Andhra Pradesh, India, Tech Genz aims to turn creative ideas into practical digital solutions, explore emerging technologies, and build useful software projects.",
+  motive: "To use technology to solve real-world problems, encourage innovation, develop technical skills, and transform ideas into meaningful digital experiences.",
+  vision: "To build a smarter digital future through collaboration, continuous learning, and creative software development.",
+  motto: "Ideas Engineered Beyond Limits.",
+  college: {
+    name: "N.B.K.R. Institute of Science & Technology (NBKRIST)",
+    shortName: "NBKRIST",
+    location: "Vidyanagar, Andhra Pradesh, India",
+    association: "Associated with the student community of NBKRIST",
+    disclaimer: "Tech Genz is formed by and associated with members of the NBKRIST student community, operating independently as a student developer team.",
+    website: "https://nbkrist.org/"
+  },
+  closing: "Together, the team aims to learn, experiment, collaborate, and create technology-driven projects while growing as developers and innovators.",
   githubOrg: "https://github.com/Tech-Genz",
+  githubRepo: "https://github.com/Tech-Genz/techgenz",
+  websiteUrl: "https://techgenz.site/",
   contactEmail: "admin@techgenz.site",
   availability: "Available for ambitious collaborations & high-impact projects"
 };
