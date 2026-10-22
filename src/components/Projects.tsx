@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Github, ExternalLink, ShieldCheck, Key, RefreshCw } from 'lucide-react';
+import { ArrowUpRight, Github, ExternalLink, ShieldCheck, Key, RefreshCw, Sparkles } from 'lucide-react';
 import { PROJECTS, ProjectItem, BRAND_CONFIG } from '../data/portfolioData';
 import { ProjectModal } from './ProjectModal';
 
@@ -23,6 +23,7 @@ export const Projects: React.FC = () => {
   };
 
   const sharepinz = PROJECTS[0];
+  const portfolioProject = PROJECTS[1];
 
   return (
     <section id="projects" className="relative w-full bg-[#050505] py-28 border-t border-white/[0.08]">
@@ -219,6 +220,14 @@ export const Projects: React.FC = () => {
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </button>
 
+                <a
+                  href="/projects/sharepinz/"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/20 text-neutral-300 hover:text-white hover:border-white/50 text-xs font-mono tracking-wider uppercase transition-colors"
+                >
+                  <span>DEDICATED PAGE</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+
                 {sharepinz.repoUrl && (
                   <a
                     href={sharepinz.repoUrl}
@@ -234,6 +243,136 @@ export const Projects: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* SECONDARY FEATURED PROJECT: TECH GENZ 3D PLATFORM */}
+        {portfolioProject && (
+          <div className="mt-12 relative rounded-3xl border border-white/15 bg-gradient-to-b from-[#111114] to-[#08080a] p-8 sm:p-12 overflow-hidden shadow-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              {/* Visual Device Mockup */}
+              <div className="lg:col-span-7 order-2 lg:order-1">
+                <a
+                  href="/projects/techgenz-portfolio/"
+                  className="block relative w-full rounded-2xl border border-white/10 hover:border-accent-cyan/40 bg-[#060608] shadow-2xl overflow-hidden group transition-all duration-300"
+                  title="Click to view Tech Genz Portfolio architecture"
+                >
+                  <div className="h-9 bg-[#121216] border-b border-white/[0.08] flex items-center justify-between px-4">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[11px] font-mono text-neutral-400 tracking-wider group-hover:text-white transition-colors">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse" />
+                      <span>https://techgenz.site</span>
+                      <ExternalLink className="w-3 h-3 text-neutral-500 group-hover:text-accent-cyan" />
+                    </div>
+                    <div className="w-10" />
+                  </div>
+
+                  <div className="p-8 sm:p-12 flex flex-col items-center justify-center text-center space-y-6 min-h-[340px]">
+                    <div className="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 text-white group-hover:scale-105 transition-transform">
+                      <Sparkles className="w-8 h-8 text-accent-cyan" />
+                    </div>
+
+                    <div>
+                      <span className="text-[10px] font-mono tracking-widest uppercase text-accent-cyan px-3 py-1 rounded-full bg-accent-cyan/10 border border-accent-cyan/20">
+                        FLAGSHIP PLATFORM // THREE.JS
+                      </span>
+                      <h4 className="text-xl sm:text-3xl font-display font-bold text-white mt-3 group-hover:text-accent-cyan transition-colors">
+                        Tech Genz 3D Experience
+                      </h4>
+                      <p className="text-xs text-neutral-400 mt-1 max-w-sm mx-auto">
+                        Interactive GPU particle mechanics, Three.js spatial point clouds, and sub-16ms responsive frame rates.
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-4 text-[11px] font-mono text-neutral-500">
+                      <span>WebGL &amp; GLSL</span>
+                      <span>•</span>
+                      <span>Audio Synthesis</span>
+                      <span>•</span>
+                      <span>React 19 &amp; Vite</span>
+                    </div>
+
+                    <div className="pt-2 text-[11px] font-mono text-accent-cyan flex items-center gap-1 group-hover:underline">
+                      <span>View Architecture &amp; Case Study</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              {/* Editorial Information Column */}
+              <div className="lg:col-span-5 order-1 lg:order-2 space-y-6">
+                <div className="flex items-center gap-3">
+                  <span className="text-xs font-mono text-neutral-500">02 //</span>
+                  <span className="text-xs font-mono tracking-widest uppercase text-accent-cyan">
+                    {portfolioProject.category}
+                  </span>
+                </div>
+
+                <div>
+                  <h3 className="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
+                    TECH GENZ <span className="font-serif italic text-neutral-400">3D</span>
+                  </h3>
+                  <p className="text-xs font-mono text-neutral-400 tracking-wider mt-1 uppercase">
+                    {portfolioProject.subtitle}
+                  </p>
+                </div>
+
+                <p className="text-sm sm:text-base text-neutral-300 font-sans leading-relaxed">
+                  {portfolioProject.description}
+                </p>
+
+                {/* Tech Stack Badges */}
+                <div className="space-y-2">
+                  <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-widest">
+                    TECHNOLOGIES
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {portfolioProject.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 rounded-full text-xs font-mono bg-white/[0.04] border border-white/[0.08] text-neutral-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="pt-4 flex flex-wrap items-center gap-3">
+                  <a
+                    href="/projects/techgenz-portfolio/"
+                    className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-white text-black font-semibold text-xs tracking-wider uppercase hover:bg-neutral-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)] group"
+                  >
+                    <span>CASE STUDY PAGE</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+
+                  <button
+                    onClick={() => setSelectedProject(portfolioProject)}
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/20 text-neutral-300 hover:text-white hover:border-white/50 text-xs font-mono tracking-wider uppercase transition-colors cursor-pointer"
+                  >
+                    <span>QUICK DETAILS</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
+
+                  <a
+                    href="https://github.com/Tech-Genz/techgenz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-3 rounded-full border border-white/10 text-neutral-400 hover:text-white hover:border-white/30 text-xs font-mono tracking-wider transition-colors"
+                  >
+                    <Github className="w-3.5 h-3.5" />
+                    <span>REPO</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Project Case Study Detail Modal */}

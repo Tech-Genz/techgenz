@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050505" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>Tech Genz Portfolio — Interactive 3D WebGL Platform | Tech Genz</title>
+    <meta name="description" content="Technical case study and architectural breakdown of the Tech Genz portfolio website. Engineered with Three.js GPU particle simulations, interactive 3D human head geometry, and React 19." />
+    <meta name="keywords" content="Tech Genz, portfolio, Three.js, WebGL, creative engineering, particle simulation, 3D web, React 19, TypeScript, Vite" />
+    <link rel="canonical" href="https://techgenz.site/projects/techgenz-portfolio/" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://techgenz.site/projects/techgenz-portfolio/" />
+    <meta property="og:title" content="Tech Genz Portfolio — Interactive 3D WebGL Platform" />
+    <meta property="og:description" content="Technical breakdown of the Tech Genz digital experience: Three.js GPU particles, interactive 3D geometry, and sub-16ms latency." />
+    <meta property="og:site_name" content="Tech Genz" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://techgenz.site/projects/techgenz-portfolio/" />
+    <meta name="twitter:title" content="Tech Genz Portfolio — Interactive 3D WebGL Platform" />
+    <meta name="twitter:description" content="Technical breakdown of the Tech Genz digital experience: Three.js GPU particles, interactive 3D geometry, and sub-16ms latency." />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tech Genz",
+          "item": "https://techgenz.site/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Projects",
+          "item": "https://techgenz.site/#projects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tech Genz Portfolio",
+          "item": "https://techgenz.site/projects/techgenz-portfolio/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Tech Genz Portfolio Platform",
+      "programmingLanguage": ["TypeScript", "GLSL", "HTML5", "CSS3"],
+      "codeRepository": "https://github.com/Tech-Genz/techgenz",
+      "creator": {
+        "@type": "Organization",
+        "@id": "https://techgenz.site/#organization",
+        "name": "Tech Genz",
+        "url": "https://techgenz.site/"
+      },
+      "description": "Interactive Three.js 3D WebGL portfolio and digital creative engineering showcase developed by the Tech Genz team."
+    }
+  ]
+}
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      body {
+        background-color: #050505;
+        color: #F5F5F7;
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      .font-display { font-family: 'Space Grotesk', sans-serif; }
+      .font-mono { font-family: 'JetBrains Mono', monospace; }
+      .accent-cyan { color: #00F0FF; }
+    </style>
+  </head>
+  <body class="bg-[#050505] text-[#F5F5F7] min-h-screen selection:bg-white selection:text-black">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-[#050505]/90 backdrop-blur-md border-b border-white/[0.08] py-4 px-6 sm:px-8">
+      <div class="max-w-5xl mx-auto flex items-center justify-between">
+        <a href="https://techgenz.site/" class="flex items-center gap-2 font-display font-bold text-white tracking-widest text-sm hover:opacity-80 transition-opacity">
+          <span>TECH GENZ</span>
+          <span class="text-neutral-500 font-mono text-xs">// PROJECTS</span>
+        </a>
+        <a href="https://techgenz.site/#projects" class="text-xs font-mono text-neutral-400 hover:text-white tracking-wider uppercase transition-colors">
+          ← Back to Portfolio
+        </a>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 sm:px-8 py-16 sm:py-24">
+      <!-- Breadcrumb Bar -->
+      <nav aria-label="Breadcrumb" class="mb-8 text-xs font-mono text-neutral-500 flex items-center gap-2">
+        <a href="https://techgenz.site/" class="hover:text-white transition-colors">Home</a>
+        <span>/</span>
+        <a href="https://techgenz.site/#projects" class="hover:text-white transition-colors">Projects</a>
+        <span>/</span>
+        <span class="text-accent-cyan">Portfolio Architecture</span>
+      </nav>
+
+      <!-- Project Header -->
+      <div class="mb-12 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent-cyan/30 bg-accent-cyan/10 text-xs font-mono text-accent-cyan tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-accent-cyan animate-pulse"></span>
+          <span>Creative Coding // 3D WebGL • Production</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-display font-black tracking-tight text-white uppercase leading-[1.05]">
+          Tech Genz Experience
+        </h1>
+        <p class="text-xl sm:text-2xl text-neutral-300 font-sans font-light max-w-3xl leading-relaxed">
+          Interactive 3D WebGL digital experience and creative engineering showcase built by <strong class="text-white font-medium">Tech Genz</strong>.
+        </p>
+        <p class="text-xs sm:text-sm font-mono text-neutral-400 tracking-wide uppercase">
+          Motto: &ldquo;Ideas Engineered Beyond Limits&rdquo;
+        </p>
+      </div>
+
+      <!-- Live Action Buttons -->
+      <div class="flex flex-wrap items-center gap-4 mb-16 pt-2">
+        <a href="https://techgenz.site/" style="background-color: #ffffff; color: #000000; padding: 12px 28px; border-radius: 9999px; font-weight: 600; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+          <span>Explore Live Experience (techgenz.site) ↗</span>
+        </a>
+        <a href="https://github.com/Tech-Genz/techgenz" target="_blank" rel="noopener noreferrer" style="border: 1px solid rgba(255,255,255,0.2); color: #E5E7EB; padding: 12px 24px; border-radius: 9999px; font-size: 12px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;">
+          GitHub Repository ↗
+        </a>
+      </div>
+
+      <!-- Architectural Highlights -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div style="background-color: #0c0c0e; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px;">
+          <div class="text-xs font-mono text-neutral-500 uppercase tracking-widest mb-2">01 // GPU COMPUTE</div>
+          <h3 class="text-lg font-display font-bold text-white mb-2">Three.js Particle Systems</h3>
+          <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+            Procedural point clouds calculated on GPU shaders, reacting dynamically to cursor position, scroll velocity, and viewport aspect ratio.
+          </p>
+        </div>
+
+        <div style="background-color: #0c0c0e; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px;">
+          <div class="text-xs font-mono text-accent-cyan uppercase tracking-widest mb-2">02 // 3D GEOMETRY</div>
+          <h3 class="text-lg font-display font-bold text-white mb-2">Parametric Head Bust</h3>
+          <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+            Interactive mathematical head geometry formed by thousands of dynamic particles that dissolve, disperse, and reassemble during user scrolling.
+          </p>
+        </div>
+
+        <div style="background-color: #0c0c0e; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px;">
+          <div class="text-xs font-mono text-neutral-500 uppercase tracking-widest mb-2">03 // PERFORMANCE</div>
+          <h3 class="text-lg font-display font-bold text-white mb-2">Sub-16ms 60 FPS</h3>
+          <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+            Engineered with React 19, TypeScript, and Vite. Optimized with offscreen canvas sampling, device pixel ratio caps, and requestAnimationFrame throttling.
+          </p>
+        </div>
+      </div>
+
+      <!-- Engineering Breakdown -->
+      <section class="space-y-12 mb-16">
+        <div style="background-color: #0c0c0e; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px;">
+          <h2 class="text-2xl font-display font-bold text-white mb-4">Core Technical Architecture</h2>
+          <ul class="space-y-4 text-sm sm:text-base text-neutral-300">
+            <li class="flex items-start gap-3">
+              <span class="text-accent-cyan font-mono font-bold">✓</span>
+              <div>
+                <strong class="text-white">Custom GPU Point Cloud:</strong> Thousands of rendered vertices animating via custom physics simulation for seamless scroll transitions.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-accent-cyan font-mono font-bold">✓</span>
+              <div>
+                <strong class="text-white">Web Audio Synthesizer:</strong> Integrated Web Audio API tone generator producing ambient cosmic harmonic frequencies with toggle controls.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-accent-cyan font-mono font-bold">✓</span>
+              <div>
+                <strong class="text-white">Automated Deployment:</strong> Continuous integration and deployment via GitHub Actions with automated linting, typechecking, and GitHub Pages publishing.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Team Attribution -->
+        <div style="background-color: #0c0c0e; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px;">
+          <h2 class="text-2xl font-display font-bold text-white mb-2">Engineered by Tech Genz</h2>
+          <p class="text-sm text-neutral-400 mb-6 max-w-2xl">
+            The platform is built and maintained collaboratively by the Tech Genz team:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 12px;">
+              <div class="text-xs font-mono text-accent-cyan">Team Leader</div>
+              <div class="font-bold text-white mt-1">V. Gunasekhar</div>
+              <a href="https://www.linkedin.com/in/varikunta-gunasekhar-446997369/" target="_blank" rel="noopener noreferrer" class="text-[11px] font-mono text-neutral-400 hover:text-white mt-2 block">LinkedIn ↗</a>
+            </div>
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 12px;">
+              <div class="text-xs font-mono text-neutral-400">Team Member</div>
+              <div class="font-bold text-white mt-1">CH. Sahithi Sri</div>
+              <a href="https://www.linkedin.com/in/sahithi-sri-2b0355386" target="_blank" rel="noopener noreferrer" class="text-[11px] font-mono text-neutral-400 hover:text-white mt-2 block">LinkedIn ↗</a>
+            </div>
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 12px;">
+              <div class="text-xs font-mono text-neutral-400">Team Member</div>
+              <div class="font-bold text-white mt-1">Kull Bhuvan</div>
+              <a href="https://www.linkedin.com/in/kull-bhuvan-772058440" target="_blank" rel="noopener noreferrer" class="text-[11px] font-mono text-neutral-400 hover:text-white mt-2 block">LinkedIn ↗</a>
+            </div>
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 12px;">
+              <div class="text-xs font-mono text-neutral-400">Team Member</div>
+              <div class="font-bold text-white mt-1">SK Mohammad Navaz</div>
+              <a href="https://www.linkedin.com/in/navaz-sk-523aa735a" target="_blank" rel="noopener noreferrer" class="text-[11px] font-mono text-neutral-400 hover:text-white mt-2 block">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="pt-8 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-neutral-400">
+        <div>
+          © 2026 TECH GENZ. ALL RIGHTS RESERVED.
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://techgenz.site/" class="hover:text-white transition-colors">Tech Genz Homepage</a>
+          <span>•</span>
+          <a href="https://github.com/Tech-Genz/techgenz" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub Repository ↗</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

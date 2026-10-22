@@ -77,14 +77,24 @@ export const Hero: React.FC<HeroProps> = ({ scrollProgress }) => {
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-white/10 bg-black/40 backdrop-blur-md mb-4 shadow-lg">
           <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan" />
           <p className="text-[11px] sm:text-xs font-mono tracking-[0.25em] text-neutral-300 uppercase">
-            {BRAND_CONFIG.supportingHeadline}
+            SOFTWARE &amp; TECHNOLOGY TEAM
           </p>
         </div>
 
-        {/* Hero Title: Massive Metallic Gradient Typography with 3D Depth */}
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-display font-extrabold tracking-tight leading-[0.92] text-metallic uppercase drop-shadow-[0_20px_40px_rgba(0,0,0,0.95)]">
-          {BRAND_CONFIG.tagline}
+        {/* Hero Title: Primary Brand Heading TECH GENZ */}
+        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-display font-black tracking-tight leading-[0.92] text-metallic uppercase drop-shadow-[0_20px_40px_rgba(0,0,0,0.95)]">
+          TECH GENZ
         </h1>
+
+        {/* Headline: WE BUILD WHAT'S NEXT. */}
+        <p className="mt-4 text-xl sm:text-3xl md:text-4xl font-display font-extrabold text-white tracking-wide uppercase">
+          {BRAND_CONFIG.tagline}
+        </p>
+
+        {/* Motto: IDEAS ENGINEERED BEYOND LIMITS */}
+        <p className="mt-2 text-xs sm:text-sm font-mono tracking-widest text-accent-cyan uppercase">
+          &ldquo;{BRAND_CONFIG.supportingHeadline}&rdquo;
+        </p>
 
         {/* Subtitle statement */}
         <p className="mt-4 max-w-2xl text-xs sm:text-sm md:text-base text-neutral-300 font-sans font-light leading-relaxed px-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">

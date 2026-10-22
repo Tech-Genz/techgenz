@@ -149,6 +149,30 @@ export const PROJECTS: ProjectItem[] = [
       "Minimalist, distraction-free responsive upload and download UI"
     ],
     challenges: "Handling concurrent chunked uploads reliably across spotty network connections while maintaining strict PIN access gating and automated storage cleanup."
+  },
+  {
+    id: "techgenz-portfolio",
+    index: "02",
+    title: "TECH GENZ 3D",
+    italicWord: "creative web",
+    subtitle: "INTERACTIVE 3D WEBGL PLATFORM",
+    category: "Creative Coding // 3D WebGL",
+    description: "The official digital platform and interactive portfolio for Tech Genz. Engineered with custom Three.js GPU particle simulations, procedural point clouds, audio synthesis, and sub-16ms latency.",
+    featured: true,
+    year: "2026",
+    techStack: ["React 19", "TypeScript", "Three.js", "WebGL", "GLSL Shaders", "Tailwind CSS", "Vite"],
+    mockupType: "desktop",
+    repoUrl: "https://github.com/Tech-Genz/techgenz",
+    liveUrl: "https://techgenz.site/",
+    problem: "Static developer portfolios lack technical distinction and fail to demonstrate real mastery over interactive GPU computing, fluid physics, and creative code.",
+    solution: "Engineered a parametric 3D particle system featuring tens of thousands of dynamic nodes reacting to user scroll velocity, pointer physics, and harmonic audio synthesis.",
+    keyFeatures: [
+      "Procedural Three.js particle point cloud with custom dissipation physics",
+      "Interactive harmonic audio synthesis using Web Audio API",
+      "Sub-16ms 60 FPS performance optimized with requestAnimationFrame",
+      "Clean semantic architecture with linked Schema.org structured data"
+    ],
+    challenges: "Balancing complex 3D particle math with mobile GPU power envelopes and guaranteeing rapid First Contentful Paint times."
   }
 ];
 

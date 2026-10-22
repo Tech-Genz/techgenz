@@ -83,10 +83,26 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
+                  href="/projects/sharepinz/"
+                  className="hover:text-accent-cyan transition-colors"
+                >
+                  SharePinz Case Study
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/projects/techgenz-portfolio/"
+                  className="hover:text-accent-cyan transition-colors"
+                >
+                  3D Portfolio Architecture
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://sharepinz.site/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-accent-cyan transition-colors"
+                  className="hover:text-white transition-colors"
                 >
                   SharePinz Live Platform ↗
                 </a>

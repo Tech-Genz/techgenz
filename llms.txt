@@ -2,13 +2,16 @@
 
 > Ideas Engineered Beyond Limits.
 
-Tech Genz is a software and technology team associated with the student community of N.B.K.R. Institute of Science & Technology (NBKRIST), Vidyanagar, Andhra Pradesh, India. The team operates independently as a student developer team aiming to turn ambitious ideas into useful digital experiences, explore emerging technologies, and build software projects.
+Tech Genz is a software and technology team building high-performance web applications, cloud systems, and interactive digital experiences. Formed around innovation, engineering discipline, and collaborative craft, the team operates as a student developer team associated with the student community of N.B.K.R. Institute of Science & Technology (NBKRIST), located in Vidyanagar, Andhra Pradesh, India.
 
 ## Identity & Disambiguation
-- Brand Name: Tech Genz
+- Primary Brand Name: Tech Genz
 - Alternate Name: TechGenz
 - Role: Software & Technology Team
-- College Connection: Associated with the student community of N.B.K.R. Institute of Science & Technology (NBKRIST)
+- Primary Website: https://techgenz.site/
+- Primary GitHub Organization: https://github.com/Tech-Genz
+- Primary GitHub Repository: https://github.com/Tech-Genz/techgenz
+- Student Community Association: N.B.K.R. Institute of Science & Technology (NBKRIST)
 - Location: Vidyanagar, Andhra Pradesh, India
 - College Portal: https://nbkrist.org/
 - Note: Tech Genz is formed by members of the student community; it operates independently as a collaborative student developer team.
@@ -23,16 +26,20 @@ To build a smarter digital future through collaboration, continuous learning, an
 "Ideas Engineered Beyond Limits."
 
 ## Core Team Members
-- V. Gunasekhar — Team Leader
-- CH. Sahithi Sri — Team Member
-- Kull Bhuvan — Team Member
-- SK Mohammad Navaz — Team Member
+- V. Gunasekhar — Team Leader (LinkedIn: https://www.linkedin.com/in/varikunta-gunasekhar-446997369/)
+- CH. Sahithi Sri — Team Member (LinkedIn: https://www.linkedin.com/in/sahithi-sri-2b0355386)
+- Kull Bhuvan — Team Member (LinkedIn: https://www.linkedin.com/in/kull-bhuvan-772058440)
+- SK Mohammad Navaz — Team Member (LinkedIn: https://www.linkedin.com/in/navaz-sk-523aa735a)
 
-## Key Projects
-- SharePinz: A PIN-based ephemeral file-sharing platform (https://sharepinz.site/)
+## Published Software Projects & Technical Pages
+- SharePinz Live Platform: https://sharepinz.site/
+- SharePinz Dedicated Case Study: https://techgenz.site/projects/sharepinz/
+- Tech Genz 3D Portfolio Platform: https://techgenz.site/
+- Tech Genz Portfolio Architecture: https://techgenz.site/projects/techgenz-portfolio/
 
-## Official Web Properties & Repositories
-- Official Website: https://techgenz.site/
-- GitHub Organization: https://github.com/Tech-Genz
-- GitHub Repository: https://github.com/Tech-Genz/techgenz
-- Contact: admin@techgenz.site
+## Official Contacts
+- General: admin@techgenz.site
+- Leader: admin@techgenz.site
+- Member 1: c.sahithisri@techgenz.site
+- Member 2: k.bhuvan@techgenz.site
+- Member 3: sk.navaz@techgenz.site
