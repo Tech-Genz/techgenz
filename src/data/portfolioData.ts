@@ -48,12 +48,13 @@ export interface TechItem {
 
 export const BRAND_CONFIG = {
   name: "TECH GENZ",
+  roleTitle: "Software & Technology Team",
   tagline: "WE BUILD WHAT'S NEXT.",
   supportingHeadline: "IDEAS ENGINEERED BEYOND LIMITS.",
-  descriptor: "Technology Studio // Creative Engineering",
-  subDescriptor: "Web, AI, Cloud & Interactive 3D",
+  descriptor: "Tech Genz — Software & Technology Team",
+  subDescriptor: "Associated with the student community of NBKRIST, Vidyanagar",
   intro: "Four minds. One vision. Technology built to turn ambitious ideas into useful experiences.",
-  about: "Tech Genz is a software and technology team formed around innovation, creativity, teamwork, and problem-solving. Associated with the student community of N.B.K.R. Institute of Science & Technology (NBKRIST), Vidyanagar, Andhra Pradesh, India, Tech Genz aims to turn creative ideas into practical digital solutions, explore emerging technologies, and build useful software projects.",
+  about: "Tech Genz is a software and technology team associated with the student community of N.B.K.R. Institute of Science & Technology (NBKRIST), Vidyanagar, Andhra Pradesh, India. Formed around innovation, creativity, teamwork, and practical problem-solving, our team builds web applications, AI-powered tools, and backend systems. Operating independently as a student developer team, we turn ambitious ideas into useful digital experiences while exploring emerging technologies.",
   motive: "To use technology to solve real-world problems, encourage innovation, develop technical skills, and transform ideas into meaningful digital experiences.",
   vision: "To build a smarter digital future through collaboration, continuous learning, and creative software development.",
   motto: "Ideas Engineered Beyond Limits.",

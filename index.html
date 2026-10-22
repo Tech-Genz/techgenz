@@ -29,34 +29,52 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Tech Genz",
-  "url": "https://techgenz.site/",
-  "description": "Tech Genz is a software and technology team associated with the student community of N.B.K.R. Institute of Science & Technology (NBKRIST), Vidyanagar, Andhra Pradesh, India. We focus on innovation, teamwork, software development, and practical digital solutions.",
-  "slogan": "Ideas Engineered Beyond Limits",
-  "sameAs": [
-    "https://github.com/Tech-Genz/techgenz"
-  ],
-  "member": [
+  "@graph": [
     {
-      "@type": "Person",
-      "name": "V. Gunasekhar",
-      "jobTitle": "Team Leader"
+      "@type": "WebSite",
+      "@id": "https://techgenz.site/#website",
+      "url": "https://techgenz.site/",
+      "name": "Tech Genz",
+      "alternateName": "TechGenz",
+      "publisher": {
+        "@id": "https://techgenz.site/#organization"
+      }
     },
     {
-      "@type": "Person",
-      "name": "CH. Sahithi Sri",
-      "jobTitle": "Team Member"
-    },
-    {
-      "@type": "Person",
-      "name": "Kull Bhuvan",
-      "jobTitle": "Team Member"
-    },
-    {
-      "@type": "Person",
-      "name": "SK Mohammad Navaz",
-      "jobTitle": "Team Member"
+      "@type": "Organization",
+      "@id": "https://techgenz.site/#organization",
+      "name": "Tech Genz",
+      "alternateName": "TechGenz",
+      "url": "https://techgenz.site/",
+      "logo": "https://techgenz.site/favicon.svg",
+      "description": "Tech Genz is a software and technology team associated with the student community of N.B.K.R. Institute of Science & Technology (NBKRIST), Vidyanagar, Andhra Pradesh, India. We focus on innovation, teamwork, software development, and practical digital solutions.",
+      "slogan": "Ideas Engineered Beyond Limits",
+      "sameAs": [
+        "https://github.com/Tech-Genz",
+        "https://github.com/Tech-Genz/techgenz"
+      ],
+      "member": [
+        {
+          "@type": "Person",
+          "name": "V. Gunasekhar",
+          "jobTitle": "Team Leader"
+        },
+        {
+          "@type": "Person",
+          "name": "CH. Sahithi Sri",
+          "jobTitle": "Team Member"
+        },
+        {
+          "@type": "Person",
+          "name": "Kull Bhuvan",
+          "jobTitle": "Team Member"
+        },
+        {
+          "@type": "Person",
+          "name": "SK Mohammad Navaz",
+          "jobTitle": "Team Member"
+        }
+      ]
     }
   ]
 }

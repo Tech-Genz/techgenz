@@ -46,8 +46,8 @@ export const Hero: React.FC<HeroProps> = ({ scrollProgress }) => {
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between pt-6">
         <div className="flex items-center gap-3">
           <span className="inline-block w-2 h-2 rounded-full bg-accent-cyan shadow-[0_0_10px_#00F0FF] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-widest text-neutral-400 uppercase">
-            STUDIO LAB // 2026 EDITION
+          <span className="text-[11px] font-mono tracking-widest text-neutral-300 uppercase">
+            TECH GENZ // SOFTWARE &amp; TECHNOLOGY TEAM
           </span>
         </div>
 
@@ -98,9 +98,9 @@ export const Hero: React.FC<HeroProps> = ({ scrollProgress }) => {
         <div className="text-center sm:text-left">
           <div className="text-sm sm:text-base font-display text-white tracking-wide">
             <span className="font-bold">TECH GENZ</span>{' '}
-            <span className="font-serif italic text-neutral-400 text-lg">Engineering Studio</span>
+            <span className="font-serif italic text-neutral-400 text-lg">— Software &amp; Technology Team</span>
           </div>
-          <div className="text-xs font-mono text-neutral-500 tracking-wider">
+          <div className="text-xs font-mono text-neutral-400 tracking-wider mt-0.5">
             {BRAND_CONFIG.subDescriptor}
           </div>
         </div>

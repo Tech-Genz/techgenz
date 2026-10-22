@@ -62,6 +62,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           <span className="text-neutral-500 font-mono font-normal tracking-normal group-hover:text-accent-cyan transition-colors">
             //
           </span>
+          <span className="hidden xl:inline text-[10px] font-mono font-normal tracking-wider text-neutral-400 uppercase">
+            Software &amp; Technology Team
+          </span>
         </a>
 
         {/* Desktop Navigation */}

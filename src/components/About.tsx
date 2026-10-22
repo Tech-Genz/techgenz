@@ -17,20 +17,34 @@ export const About: React.FC = () => {
 
         {/* Section Heading */}
         <div className="mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-xs font-mono text-accent-cyan tracking-wider uppercase mb-6 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan" />
+            <span>Tech Genz — Software &amp; Technology Team</span>
+          </div>
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-extrabold tracking-tight text-metallic uppercase leading-[1.05]">
             FOUR MINDS.<br />
             <span className="font-serif italic font-normal text-white">ONE VISION.</span>
           </h2>
-          <p className="mt-3 text-xs sm:text-sm font-mono tracking-widest text-accent-cyan uppercase">
+          <p className="mt-3 text-xs sm:text-sm font-mono tracking-widest text-neutral-400 uppercase">
             Motto: &ldquo;{BRAND_CONFIG.motto}&rdquo;
           </p>
         </div>
 
         {/* Core Narrative / About Us */}
         <div className="max-w-4xl mb-16 space-y-6">
-          <p className="text-lg sm:text-2xl text-neutral-200 font-sans font-light leading-relaxed">
-            {BRAND_CONFIG.about}
-          </p>
+          <div className="p-6 sm:p-8 rounded-2xl border border-white/[0.1] bg-[#0c0c0e]/90 backdrop-blur-sm shadow-xl space-y-3">
+            <h3 className="text-lg sm:text-xl font-display font-bold text-white tracking-wide flex items-center gap-2">
+              <span>Tech Genz</span>
+              <span className="text-neutral-500 font-mono text-sm">//</span>
+              <span className="text-accent-cyan font-mono text-xs sm:text-sm font-normal">Software &amp; Technology Team</span>
+            </h3>
+            <p className="text-lg sm:text-2xl text-neutral-200 font-sans font-light leading-relaxed">
+              Tech Genz is a software and technology team associated with the student community of N.B.K.R. Institute of Science &amp; Technology (NBKRIST), Vidyanagar, Andhra Pradesh, India.
+            </p>
+            <p className="text-sm sm:text-base text-neutral-400 font-sans leading-relaxed pt-2 border-t border-white/[0.06]">
+              Formed around innovation, creativity, teamwork, and practical problem-solving, our team builds web applications, AI-powered tools, and backend systems. Operating independently as a student developer team, we turn ambitious ideas into useful digital experiences while exploring emerging technologies.
+            </p>
+          </div>
           <p className="text-sm sm:text-base text-neutral-400 font-sans leading-relaxed">
             {BRAND_CONFIG.closing}
           </p>

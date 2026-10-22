@@ -18,12 +18,13 @@ export const Footer: React.FC = () => {
             <div className="text-xl font-display font-bold tracking-widest text-white flex items-center gap-2">
               <span>{BRAND_CONFIG.name}</span>
               <span className="text-neutral-600 font-mono text-sm">//</span>
+              <span className="text-accent-cyan font-mono text-xs font-normal">SOFTWARE &amp; TECHNOLOGY TEAM</span>
             </div>
-            <p className="text-xs sm:text-sm text-neutral-400 max-w-sm font-sans leading-relaxed">
-              {BRAND_CONFIG.intro}
+            <p className="text-xs sm:text-sm text-neutral-300 max-w-md font-sans leading-relaxed">
+              Tech Genz is a software and technology team associated with the student community of N.B.K.R. Institute of Science &amp; Technology (NBKRIST), Vidyanagar, Andhra Pradesh, India.
             </p>
-            <div className="text-[11px] font-mono text-neutral-600">
-              ENGINEERED FOR THE OPEN WEB • ALL RIGHTS RESERVED
+            <div className="text-[11px] font-mono text-neutral-500">
+              Motto: &ldquo;{BRAND_CONFIG.motto}&rdquo; • All Rights Reserved
             </div>
           </div>
 
