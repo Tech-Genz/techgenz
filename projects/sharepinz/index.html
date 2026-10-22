@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050505" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>SharePinz — PIN-Based Ephemeral File Sharing Platform | Tech Genz</title>
+    <meta name="description" content="SharePinz is a fast, frictionless file transfer web application engineered by Tech Genz. Upload files, generate an expiring 6-digit numeric PIN, and share files instantly with zero mandatory registration." />
+    <meta name="keywords" content="SharePinz, Tech Genz, file sharing, PIN file transfer, ephemeral storage, temporary file upload, AES-256 cloud encryption, zero signup file sharing" />
+    <link rel="canonical" href="https://techgenz.site/projects/sharepinz/" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://techgenz.site/projects/sharepinz/" />
+    <meta property="og:title" content="SharePinz — PIN-Based Ephemeral File Sharing Platform" />
+    <meta property="og:description" content="A fast, frictionless file transfer platform engineered by Tech Genz. Upload files, generate an ephemeral 6-digit PIN, and share without registration." />
+    <meta property="og:site_name" content="Tech Genz" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://techgenz.site/projects/sharepinz/" />
+    <meta name="twitter:title" content="SharePinz — PIN-Based Ephemeral File Sharing Platform" />
+    <meta name="twitter:description" content="A fast, frictionless file transfer platform engineered by Tech Genz. Upload files, generate an ephemeral 6-digit PIN, and share without registration." />
+
+    <!-- Structured Data: WebPage, BreadcrumbList, SoftwareApplication -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tech Genz",
+          "item": "https://techgenz.site/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Projects",
+          "item": "https://techgenz.site/#projects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SharePinz",
+          "item": "https://techgenz.site/projects/sharepinz/"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "name": "SharePinz",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All modern web browsers",
+      "url": "https://sharepinz.site/",
+      "creator": {
+        "@type": "Organization",
+        "@id": "https://techgenz.site/#organization",
+        "name": "Tech Genz",
+        "url": "https://techgenz.site/"
+      },
+      "description": "SharePinz is an ephemeral file transfer platform that lets users upload files, generate a temporary 6-digit PIN, and share access with recipients with zero mandatory registration.",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "softwareVersion": "1.0",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      body {
+        background-color: #050505;
+        color: #F5F5F7;
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      .font-display { font-family: 'Space Grotesk', sans-serif; }
+      .font-mono { font-family: 'JetBrains Mono', monospace; }
+      .accent-cyan { color: #00F0FF; }
+      .border-subtle { border-color: rgba(255, 255, 255, 0.08); }
+      .bg-card { background-color: #0c0c0e; }
+      .text-metallic {
+        background: linear-gradient(180deg, #FFFFFF 0%, #D1D5DB 50%, #6B7280 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-[#050505] text-[#F5F5F7] min-h-screen selection:bg-white selection:text-black">
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-[#050505]/90 backdrop-blur-md border-b border-white/[0.08] py-4 px-6 sm:px-8">
+      <div class="max-w-5xl mx-auto flex items-center justify-between">
+        <a href="https://techgenz.site/" class="flex items-center gap-2 font-display font-bold text-white tracking-widest text-sm hover:opacity-80 transition-opacity">
+          <span>TECH GENZ</span>
+          <span class="text-neutral-500 font-mono text-xs">// PROJECTS</span>
+        </a>
+        <a href="https://techgenz.site/#projects" class="text-xs font-mono text-neutral-400 hover:text-white tracking-wider uppercase transition-colors">
+          ← Back to Portfolio
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-5xl mx-auto px-6 sm:px-8 py-16 sm:py-24">
+      <!-- Breadcrumb Bar -->
+      <nav aria-label="Breadcrumb" class="mb-8 text-xs font-mono text-neutral-500 flex items-center gap-2">
+        <a href="https://techgenz.site/" class="hover:text-white transition-colors">Home</a>
+        <span>/</span>
+        <a href="https://techgenz.site/#projects" class="hover:text-white transition-colors">Projects</a>
+        <span>/</span>
+        <span class="text-accent-cyan">SharePinz</span>
+      </nav>
+
+      <!-- Project Header -->
+      <div class="mb-12 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent-cyan/30 bg-accent-cyan/10 text-xs font-mono text-accent-cyan tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-accent-cyan animate-pulse"></span>
+          <span>Web Application // Cloud Systems • Active Production</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-display font-black tracking-tight text-white uppercase leading-[1.05]">
+          SharePinz
+        </h1>
+        <p class="text-xl sm:text-2xl text-neutral-300 font-sans font-light max-w-3xl leading-relaxed">
+          PIN-Based Ephemeral File Sharing Platform engineered by <strong class="text-white font-medium">Tech Genz</strong>.
+        </p>
+        <p class="text-xs sm:text-sm font-mono text-neutral-400 tracking-wide uppercase">
+          Motto: &ldquo;Ideas Engineered Beyond Limits&rdquo;
+        </p>
+      </div>
+
+      <!-- Live Action Buttons -->
+      <div class="flex flex-wrap items-center gap-4 mb-16 pt-2">
+        <a href="https://sharepinz.site/" target="_blank" rel="noopener noreferrer" style="background-color: #ffffff; color: #000000; padding: 12px 28px; border-radius: 9999px; font-weight: 600; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+          <span>Launch SharePinz Live (sharepinz.site) ↗</span>
+        </a>
+        <a href="https://github.com/Tech-Genz" target="_blank" rel="noopener noreferrer" style="border: 1px solid rgba(255,255,255,0.2); color: #E5E7EB; padding: 12px 24px; border-radius: 9999px; font-size: 12px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;">
+          GitHub Organization ↗
+        </a>
+        <a href="https://techgenz.site/" style="border: 1px solid rgba(255,255,255,0.1); color: #9CA3AF; padding: 12px 20px; border-radius: 9999px; font-size: 12px; font-family: 'JetBrains Mono', monospace; text-decoration: none;">
+          Tech Genz Team
+        </a>
+      </div>
+
+      <!-- Core Architecture Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div style="background-color: #0c0c0e; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px;">
+          <div class="text-xs font-mono text-neutral-500 uppercase tracking-widest mb-2">01 // THE CHALLENGE</div>
+          <h3 class="text-lg font-display font-bold text-white mb-2">Registration Friction</h3>
+          <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+            Standard file transfers require either forced email signups, invasive ad tracking, or unwieldy 100-character URLs that recipients struggle to exchange across devices.
+          </p>
+        </div>
+
+        <div style="background-color: #0c0c0e; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px;">
+          <div class="text-xs font-mono text-accent-cyan uppercase tracking-widest mb-2">02 // THE SOLUTION</div>
+          <h3 class="text-lg font-display font-bold text-white mb-2">Ephemeral 6-Digit PINs</h3>
+          <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+            SharePinz couples encrypted cloud storage with a clean 6-digit numeric access key. Senders upload, share a simple 6-digit PIN, and recipients download immediately without creating an account.
+          </p>
+        </div>
+
+        <div style="background-color: #0c0c0e; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px;">
+          <div class="text-xs font-mono text-neutral-500 uppercase tracking-widest mb-2">03 // PRIVACY &amp; SECURITY</div>
+          <h3 class="text-lg font-display font-bold text-white mb-2">Automated TTL Purge</h3>
+          <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+            Files are encrypted in transit and at rest using AES-256. Automated Time-To-Live (TTL) daemon workers permanently delete expired payloads to minimize attack surface and storage waste.
+          </p>
+        </div>
+      </div>
+
+      <!-- Detailed Technical Breakdown -->
+      <section class="space-y-12 mb-16">
+        <div style="background-color: #0c0c0e; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px;">
+          <h2 class="text-2xl font-display font-bold text-white mb-4">Key Functional Capabilities</h2>
+          <ul class="space-y-4 text-sm sm:text-base text-neutral-300">
+            <li class="flex items-start gap-3">
+              <span class="text-accent-cyan font-mono font-bold">✓</span>
+              <div>
+                <strong class="text-white">Zero Mandatory Sign-Up:</strong> Senders and receivers transfer files seamlessly with zero friction. No phone numbers, passwords, or personal data collection.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-accent-cyan font-mono font-bold">✓</span>
+              <div>
+                <strong class="text-white">Instant 6-Digit Key Routing:</strong> Upon file upload completion, the application provisions a unique, non-colliding numeric PIN mapped to the payload's secured storage path.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-accent-cyan font-mono font-bold">✓</span>
+              <div>
+                <strong class="text-white">Time-To-Live Expiration:</strong> Files automatically expire after a predefined duration, triggering automated file scrubbing from cloud buckets.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-accent-cyan font-mono font-bold">✓</span>
+              <div>
+                <strong class="text-white">Bandwidth-Optimized Multipart Streaming:</strong> Fast chunks and download resumability designed for low-latency delivery across desktop and mobile networks.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tech Stack Used -->
+        <div style="background-color: #0c0c0e; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px;">
+          <h2 class="text-2xl font-display font-bold text-white mb-4">Technology Stack</h2>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 12px; background: rgba(255,255,255,0.02);">
+              <div class="text-[10px] font-mono text-neutral-500 uppercase">Frontend</div>
+              <div class="font-display font-bold text-white text-base mt-1">React &amp; TypeScript</div>
+              <div class="text-xs text-neutral-400 mt-0.5">Component state &amp; UI</div>
+            </div>
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 12px; background: rgba(255,255,255,0.02);">
+              <div class="text-[10px] font-mono text-neutral-500 uppercase">Runtime</div>
+              <div class="font-display font-bold text-white text-base mt-1">Node.js &amp; Express</div>
+              <div class="text-xs text-neutral-400 mt-0.5">REST API routing</div>
+            </div>
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 12px; background: rgba(255,255,255,0.02);">
+              <div class="text-[10px] font-mono text-neutral-500 uppercase">Storage</div>
+              <div class="font-display font-bold text-white text-base mt-1">Cloud Storage</div>
+              <div class="text-xs text-neutral-400 mt-0.5">AES-256 encrypted blobs</div>
+            </div>
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 12px; background: rgba(255,255,255,0.02);">
+              <div class="text-[10px] font-mono text-neutral-500 uppercase">Styling</div>
+              <div class="font-display font-bold text-white text-base mt-1">Tailwind CSS</div>
+              <div class="text-xs text-neutral-400 mt-0.5">Responsive design</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engineering Attribution -->
+        <div style="background-color: #0c0c0e; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px;">
+          <h2 class="text-2xl font-display font-bold text-white mb-2">Engineered by Tech Genz</h2>
+          <p class="text-sm text-neutral-400 mb-6 max-w-2xl">
+            SharePinz is conceived, designed, and maintained by the Tech Genz engineering team:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 12px;">
+              <div class="text-xs font-mono text-accent-cyan">Team Leader</div>
+              <div class="font-bold text-white mt-1">V. Gunasekhar</div>
+              <a href="https://www.linkedin.com/in/varikunta-gunasekhar-446997369/" target="_blank" rel="noopener noreferrer" class="text-[11px] font-mono text-neutral-400 hover:text-white mt-2 block">LinkedIn ↗</a>
+            </div>
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 12px;">
+              <div class="text-xs font-mono text-neutral-400">Team Member</div>
+              <div class="font-bold text-white mt-1">CH. Sahithi Sri</div>
+              <a href="https://www.linkedin.com/in/sahithi-sri-2b0355386" target="_blank" rel="noopener noreferrer" class="text-[11px] font-mono text-neutral-400 hover:text-white mt-2 block">LinkedIn ↗</a>
+            </div>
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 12px;">
+              <div class="text-xs font-mono text-neutral-400">Team Member</div>
+              <div class="font-bold text-white mt-1">Kull Bhuvan</div>
+              <a href="https://www.linkedin.com/in/kull-bhuvan-772058440" target="_blank" rel="noopener noreferrer" class="text-[11px] font-mono text-neutral-400 hover:text-white mt-2 block">LinkedIn ↗</a>
+            </div>
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 12px;">
+              <div class="text-xs font-mono text-neutral-400">Team Member</div>
+              <div class="font-bold text-white mt-1">SK Mohammad Navaz</div>
+              <a href="https://www.linkedin.com/in/navaz-sk-523aa735a" target="_blank" rel="noopener noreferrer" class="text-[11px] font-mono text-neutral-400 hover:text-white mt-2 block">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Navigation / Links -->
+      <footer class="pt-8 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-neutral-400">
+        <div>
+          © 2026 TECH GENZ. ALL RIGHTS RESERVED.
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://techgenz.site/" class="hover:text-white transition-colors">Tech Genz Homepage</a>
+          <span>•</span>
+          <a href="https://sharepinz.site/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-cyan transition-colors">Launch SharePinz ↗</a>
+          <span>•</span>
+          <a href="https://github.com/Tech-Genz" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub ↗</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
